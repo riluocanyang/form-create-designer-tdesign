@@ -31,7 +31,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sx-code/form-designer-naiveui.git"
+        "url": "git+https://github.com/riluocanyang/form-create-designer-tdesign.git"
     },
     "keywords": [
         "表单设计器",
@@ -59,7 +59,7 @@
     "author": "swcode",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/sx-code/form-designer-naiveui/issues"
+        "url": "https://github.com/riluocanyang/form-create-designer-tdesign/issues"
     },
     "homepage": "http://designer.form-create.com",
     "publishConfig": {
