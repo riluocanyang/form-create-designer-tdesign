@@ -7,22 +7,22 @@
  * @FilePath     : /form-create2/packages/element-ui/vue.config.js
  */
 module.exports = {
-    pages: {
-        app: {
-            entry: 'examples/main.js',
-            template: 'examples/index.html',
-            filename: 'index.html'
-        }
+  pages: {
+    app: {
+      entry: "examples/main.js",
+      template: "examples/index.html",
+      filename: "index.html",
     },
-    configureWebpack: {
-        module: {
-            rules: [
-                {
-                    test: /\.mjs$/,
-                    include: /node_modules/,
-                    type: 'javascript/auto'
-                },
-            ]
-        }
-    }
-}
+  },
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: "javascript/auto",
+        },
+      ],
+    },
+  },
+};
