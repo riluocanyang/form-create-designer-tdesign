@@ -2,8 +2,8 @@
 
 **这个是 Vue3 版本**
 
-[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/SX-Code/form-designer-naiveui)
-[![github](https://img.shields.io/badge/Author-sx-code-blue.svg)](https://github.com/SX-Code)
+[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/riluocanyang/form-create-designer-tdesign)
+[![github](https://img.shields.io/badge/Author-sx-code-blue.svg)](https://github.com/riluocanyang)
 
 **form-create-designer-tdesign 是基于 [@form-create/tdesign](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。可以通过拖拽的方式快速创建表单，提高开发者对表单的开发效率，节省开发者的时间。**
 
@@ -12,7 +12,7 @@
 
 **[form-create-designer](https://github.com/xaboy/form-create) 是基于 [@form-create/element-ui](https://github.com/xaboy/form-create) 开发的表单设计器。**
 
-**[form-create-designer-naiveui](https://github.com/SX-Code/form-designer-naiveui)是基于 [@form-create/naive-ui](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。**
+**[form-create-designer-naiveui](https://github.com/SX-Code/form-designer-naiveui) 是基于 [@form-create/naive-ui](https://github.com/xaboy/form-create) vue3版本实现的表单设计器组件。**
 
 
 
@@ -121,9 +121,6 @@ app.use(FcDesigner)
     ```
 > **提示! 内置的三个组件分组`name`分别为: `main`,`aide`,`layout`**
 
-## 联系
-
-##### email : 2627311935@qq.com
 
 ## License
 
