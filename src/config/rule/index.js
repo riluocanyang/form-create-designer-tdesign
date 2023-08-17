@@ -6,6 +6,7 @@ import select from './select';
 import _switch from './switch';
 import time from './time';
 import date from './date';
+import dateRange from './dateRange';
 import slider from './slider';
 import rate from './rate';
 import color from './color';
@@ -21,7 +22,7 @@ import divider from './divider';
 import row from './row';
 import col from './col';
 import tab from './tab';
-import tabPane from './tabPane';
+import tabPanel from './tabPanel';
 import space from './space';
 
 const ruleList = {
@@ -33,6 +34,7 @@ const ruleList = {
   [_switch.name]: _switch,
   [time.name]: time,
   [date.name]: date,
+  [dateRange.name]: dateRange,
   [slider.name]: slider,
   [rate.name]: rate,
   [color.name]: color,
@@ -48,7 +50,7 @@ const ruleList = {
   [row.name]: row,
   [col.name]: col,
   [tab.name]: tab,
-  [tabPane.name]: tabPane,
+  [tabPanel.name]: tabPanel,
   [space.name]: space
 };
 

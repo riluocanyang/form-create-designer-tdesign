@@ -82,7 +82,7 @@ export default {
       },
       {
         type: 'switch',
-        field: 'tooltip',
+        field: 'showTooltip',
         title: '是否展示 tooltip',
         value: true,
         props: {
@@ -90,32 +90,12 @@ export default {
         }
       },
       {
-        type: 'switch',
-        field: 'showTooltip',
-        title: '是否一直显示 tooltip',
-        info: t('components.slider.props.showTooltipInfo'),
-        value: false,
-        props: {
-          size: 'small'
-        }
-      },
-      {
         type: 'select',
-        field: 'placement',
-        title: 'Tooltip 的弹出位置',
+        field: 'layout',
+        title: '滑块布局方向',
         options: [
-          { label: 'top-start', value: 'top-start' }, 
-          { label: 'top', value: 'top' },
-          { label: 'top-end', value: 'top-end' }, 
-          { label: 'right-start', value: 'right-start' },
-          { label: 'right', value: 'right' }, 
-          { label: 'right-end', value: 'right-end' }, 
-          { label: 'bottom-start', value: 'bottom-start' },
-          { label: 'bottom', value: 'bottom' }, 
-          { label: 'bottom-end', value: 'bottom-end' }, 
-          { label: 'left-start', value: 'left-start' },
-          { label: 'left', value: 'left' }, 
-          { label: 'left-end', value: 'left-end' }, 
+          { label: 'vertical', value: 'vertical' }, 
+          { label: 'horizontal', value: 'horizontal' },
         ]
       }
     ]);

@@ -2,7 +2,7 @@ import uniqueId from '@form-create/utils/lib/unique';
 import { localeProps, makeRequiredRule } from '../../utils';
 
 const label = '上传';
-const name = 'upload';
+const name = 't-upload';
 
 export default {
   icon: 'icon-upload',
@@ -16,12 +16,15 @@ export default {
       info: '',
       $required: false,
       props: {
-        action: '',
-        onSuccess(res, file) {
-          file.url = res.data.url;
-        },
-        limit: 1,
+        action: 'https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo',
+        // onSuccess(res, file) {
+        //   file.url = res.data.url;
+        // },
+        // onFail(e) {
+        //   console.log(e);
+        // }
       },
+      value: [new File(["foo"], "foo.txt")]
     };
   },
   props(_, { t }) {
@@ -30,7 +33,7 @@ export default {
       {
         type: 'input',
         field: 'action',
-        title: '请求提交的地址(必填)'
+        title: '请求提交的地址'
       },
       {
         type: 'Struct',
@@ -58,7 +61,8 @@ export default {
         type: 'input',
         field: 'name',
         title: '文件在提交表单中的字段名'
-      }, {
+      }, 
+      {
         type: 'switch',
         field: 'withCredentials',
         title: '是否携带 Cookie',
@@ -74,7 +78,7 @@ export default {
       }, 
       {
         type: 'switch',
-        field: 'defaultUpload',
+        field: 'autoUpload',
         title: '选择文件时候是否默认上传',
         value: true,
         props: {
@@ -98,8 +102,8 @@ export default {
       },
       {
         type: 'switch',
-        field: 'showCancelButton',
-        title: '是否显示取消按钮',
+        field: 'allowUploadDuplicateFile',
+        title: '是否允许重复上传相同文件名的文件',
         value: true,
         props: {
           size: 'small'
@@ -107,8 +111,8 @@ export default {
       },
       {
         type: 'switch',
-        field: 'showDownloadButton',
-        title: '是否显示下载按钮',
+        field: 'draggable',
+        title: '是否启用拖拽上传',
         value: false,
         props: {
           size: 'small'
@@ -116,40 +120,24 @@ export default {
       },
       {
         type: 'switch',
-        field: 'showRemoveButton',
-        title: '是否显示删除按钮',
+        field: 'showUploadProgress',
+        title: '是否显示上传进度',
         value: true,
         props: {
           size: 'small'
         }
       },
+      
       {
-        type: 'switch',
-        field: 'showRetryButton',
-        title: '是否显示重新上传按钮',
-        value: true,
-        props: {
-          size: 'small'
-        }
+        type: 'input',
+        field: 'sizeLimit',
+        title: '图片文件大小限制，默认单位 KB',
       },
       {
         type: 'switch',
-        field: 'showFileList',
-        title: '是否显示文件列表',
+        field: 'showThumbnail',
+        title: '是否在文件列表中显示缩略图',
         value: true,
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'showPreviewButton',
-        title: '是否允许显示预览按钮',
-        info: t('components.upload.props.showPreviewButtonInfo'),
-        value: true,
-        props: {
-          size: 'small'
-        }
       },
     ]);
   }

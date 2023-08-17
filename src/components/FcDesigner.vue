@@ -82,7 +82,8 @@
       <!-- 右边组件属性设置部分 -->
       <t-aside
         class="_fc-r"
-        width="350px"
+        width="300px"
+        style="flex: 0 0 300px"
         v-if="!config || config.showConfig !== false"
       >
         <div style="height: 100%; position: relative">
@@ -112,7 +113,7 @@
                 {{ t("designer.config.form") }}
               </div>
             </t-header>
-            <!-- Form -->
+            <!-- 表单配置 -->
             <t-layout
               v-show="activeTab === 'form'"
               v-if="!config || config.showFormConfig !== false"
@@ -126,7 +127,7 @@
                 v-model:api="form.api"
               ></DragForm>
             </t-layout>
-            <!-- Props -->
+            <!-- 组件配置 -->
             <t-layout
               v-show="activeTab === 'props'"
               :key="activeRule ? activeRule._id : ''"
@@ -134,6 +135,7 @@
               position="absolute"
             >
               <div class="props-set">
+                <!-- 基础配置 -->
                 <t-divider v-if="showBaseRule">{{
                   t("designer.config.rule")
                 }}</t-divider>
@@ -144,6 +146,7 @@
                   :option="baseForm.options"
                   @change="baseChange"
                 ></DragForm>
+                <!-- 验证配置 -->
                 <t-divider>{{ t("designer.config.props") }}</t-divider>
                 <DragForm
                   v-model:api="propsForm.api"
@@ -169,9 +172,10 @@
       </t-aside>
       <t-dialog
         v-model:visible="preview.state"
-        :close-btn="false"
+        :close-btn="true"
         header="预览"
-        style="width: 800px"
+        :footer="false"
+        width="800px"
       >
         <ViewForm
           :rule="preview.rule"
@@ -256,17 +260,15 @@ export default defineComponent({
         api: {},
         option: {
           form: {
-            labelPlacement: "top",
-            size: "small",
+            labelAlign: "top",
           },
           submitBtn: false,
         },
         value: {
           form: {
-            inline: false,
-            labelPlacement: "left",
-            size: "small",
-            labelWidth: "100",
+            layout: 'vertical',
+            labelAlign: "left",
+            labelWidth: "100px",
             formCreateSubmitBtn: true,
             formCreateResetBtn: false,
           },
@@ -278,7 +280,7 @@ export default defineComponent({
         api: {},
         options: {
           form: {
-            labelPlacement: "top",
+            labelAlign: "top",
             size: "small",
           },
           submitBtn: false,
@@ -293,7 +295,7 @@ export default defineComponent({
         api: {},
         options: {
           form: {
-            labelPlacement: "top",
+            labelAlign: "top",
             size: "small",
           },
           submitBtn: false,
@@ -308,7 +310,7 @@ export default defineComponent({
         api: {},
         options: {
           form: {
-            labelPlacement: "top",
+            labelAlign: "top",
             size: "small",
           },
           submitBtn: false,
@@ -973,9 +975,6 @@ export default defineComponent({
 });
 </script>
 <style>
-._fc-designer .t-layout {
-  background: none;
-}
 
 ._fc-m .form-create ._fc-l-item {
   background: #18a058;
@@ -1098,16 +1097,24 @@ export default defineComponent({
 ._fc-m-drag .t-form .t-row .t-col {
   height: 100%;
 }
-._fc-designer .form-create .t-form__item {
+._fc-designer ._fc-r .form-create .t-form__item {
   display: flex;
   flex-direction: column;
 }
 
-._fc-designer .form-create .t-form__item .t-form__label {
+._fc-designer ._fc-r .form-create .t-form__item .t-form__label {
   text-align: left;
 }
 
-._fc-designer .form-create .t-form__item .t-form__controls {
+._fc-designer ._fc-r .form-create .t-form__item .t-form__controls {
   margin-left: 0 !important;
+}
+
+._fc-designer ._fc-r .t-layout {
+  background: none !important;
+}
+
+._fc-designer ._fc-r .t-form__label {
+  white-space: pre-wrap;
 }
 </style>

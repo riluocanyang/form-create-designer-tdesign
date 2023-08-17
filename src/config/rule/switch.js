@@ -43,13 +43,11 @@ export default {
       },
       {
         type: 'input',
-        field: 'checkedValue',
-        title: '选中时对应的值'
-      },
-      {
-        type: 'input',
-        field: 'uncheckedValue',
-        title: '未选中时对应的值'
+        field: 'label',
+        title: '开关内容',
+        props: {
+          label: ['开', '关']
+        }
       },
     ]);
   }

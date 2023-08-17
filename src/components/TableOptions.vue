@@ -1,6 +1,7 @@
 <template>
   <div class="_fc_table_opt">
     <t-table
+      row-key="id"
       :data="modelValue"
       :columns="columns"
       size="small"
@@ -16,7 +17,6 @@
 </template>
 <script lang="jsx">
 import { defineComponent, h, inject } from "vue";
-import { TButton, Input } from "tdesign-vue-next";
 export default defineComponent({
   name: "TableOptions",
   inheritAttrs: false,
@@ -40,7 +40,7 @@ export default defineComponent({
             return (
               <t-input
                 value={row.label}
-                onUpdateValue={(v) => {
+                onChange={(v) => {
                   modelValue[rowIndex].label = v;
                   onInput(row);
                 }}
@@ -55,23 +55,13 @@ export default defineComponent({
             return (
               <t-input
                 value={row.value.toString()}
-                onUpdateValue={(v) => {
-                  modelValue[rowIndex].label = Number(v);
+                onChange={(v) => {
+                  modelValue[rowIndex].value = v;
                   onInput(row);
                 }}
               />
             );
           },
-          // render(row, index) {
-          //   return h(Input, {
-          //     value: row.value.toString(),
-          //     showButton: false,
-          //     onUpdateValue(v) {
-          //       modelValue[index].value = Number(v);
-          //       onInput(row);
-          //     },
-          //   });
-          // },
         },
         {
           title: "操作",
@@ -86,20 +76,6 @@ export default defineComponent({
               </t-button>
             );
           },
-          // render(_, index) {
-          //   return h(
-          //     TButton,
-          //     {
-          //       text: true,
-          //       size: "small",
-          //       onClick: () => del(index),
-          //     },
-          //     {
-          //       default: () =>
-          //         h("i", { class: "fc-icon icon-delete" }),
-          //     }
-          //   );
-          // },
         },
       ];
     };

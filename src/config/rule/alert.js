@@ -11,9 +11,9 @@ export default {
     return {
       type: name,
       props: {
-        title: t('components.n-alert.name'),
-        type: 'success',
-        description: t('components.n-alert.description')
+        title: t('components.t-alert.name'),
+        type: 'info',
+        message: t('components.t-alert.message')
       },
       children: []
     };
@@ -27,9 +27,9 @@ export default {
       },
       {
         type: 'select',
-        field: 'type',
+        field: 'theme',
         title: '类型',
-        value: 'default',
+        value: 'info',
         options: [
           { label: 'default', value: 'default' },
           { label: 'success', value: 'success' },
@@ -40,22 +40,13 @@ export default {
       },
       {
         type: 'input',
-        field: 'description',
-        title: '描述'
+        field: 'message',
+        title: '内容'
       },
       {
         type: 'switch',
-        field: 'closable',
+        field: 'close',
         title: '是否可关闭',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'showIcon',
-        title: '是否显示图标',
-        value: true,
         props: {
           size: 'small'
         }

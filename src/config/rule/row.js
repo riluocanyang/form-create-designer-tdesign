@@ -12,10 +12,10 @@ export default {
     return {
       type: 'FcRow',
       props: {},
-      children: []
+      children: [],
     };
   },
-  children: 'col',
+  children: 't-col',
   childrenLen: 2,
   props(_, { t }) {
     return localeProps(t, name + '.props', [

@@ -6,6 +6,7 @@ import select from './rule/select';
 import _switch from './rule/switch';
 import time from './rule/time';
 import date from './rule/date';
+import dateRange from './rule/dateRange';
 import slider from './rule/slider';
 import rate from './rule/rate';
 import color from './rule/color';
@@ -28,8 +29,8 @@ export default function createMenu({ t }) {
       name: 'main',
       title: t('menu.main'),
       list: [
-        input, number, radio, checkbox, select, _switch, time, date, slider, 
-        rate, color, cascader, upload, transfter, tree, editor
+        input, number, radio, checkbox, select, _switch, time, date, dateRange, slider, 
+        rate, color, cascader, upload, transfter, tree, editor,
       ]
     },
     {

@@ -27,30 +27,24 @@ export default {
           field: 'type',
           title: '类型',
           options: [
-            { label: 'text', value: 'text' }, { label: 'textarea', value: 'textarea' },
-            { label: 'number', value: 'number' }, { label: 'password', value: 'password' }
+            { label: 'text', value: 'text' }, 
+            { label: 'textarea', value: 'textarea' },
+            { label: 'number', value: 'number' }, 
+            { label: 'password', value: 'password' },
+            { label: 'search', value: 'search' },
+            { label: 'submit', value: 'submit' },
+            { label: 'url', value: 'url' },
+            { label: 'tel', value: 'tel' }
           ]
         },
         { type: 'inputNumber', field: 'maxlength', title: '最大输入长度', props: { min: 0, size: "small" } },
-        { type: 'inputNumber', field: 'minlength', title: '最小输入长度', props: { min: 0, size: "small" } },
-        { type: 'switch', field: 'showCount', title: '是否显示输入字数统计', props: { size: "small" } },
+        { type: 'switch', field: 'showLimitNumber', title: '是否显示输入字数统计', props: { size: "small" } },
         { type: 'input', field: 'placeholder', title: '输入框占位文本' },
         { type: 'switch', field: 'clearable', title: '是否可清空', props: { size: "small" } },
-        {
-          type: 'radio', field: 'showPasswordOn', title: '显示密码的时机', options: [
-            { value: 'click', label: 'click' },
-            { value: 'mousedown', label: 'mousedown' },]
-        },
         { type: 'switch', field: 'disabled', title: '禁用', props: { size: "small" } },
-        {
-          type: 'inputNumber',
-          field: 'rows',
-          info: t('components.input.props.rowsInfo'),
-          title: '输入框行数',
-          props: { min: 0 }
-        },
         { type: 'switch', field: 'readonly', title: '是否只读', props: { size: "small" } },
-        { type: 'switch', field: 'autofocus', title: '自动获取焦点', props: { size: "small" } }
+        { type: 'switch', field: 'autofocus', title: '自动获取焦点', props: { size: "small" } },
+        { type: 'switch', field: 'autocomplete', title: '是否开启自动填充', props: { size: "small" } },
       ]
     );
   }

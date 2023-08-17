@@ -63,7 +63,7 @@ export default {
       }, 
       {
         type: 'inputNumber',
-        field: 'maxTagCount',
+        field: 'max',
         title: '多选标签的最大显示数量',
         props: { 
           min: 0,
@@ -83,31 +83,14 @@ export default {
           size: 'small'
         }
       }, 
-      { 
-        type: 'switch', 
-        field: 'tag', 
-        title: '是否允许用户创建新条目',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'remote',
-        title: '是否要异步获取选项',
-        info: t('components.select.props.remoteInfo'),
-        props: {
-          size: 'small'
-        }
-      }, 
       {
         type: 'Struct',
-        field: 'onSearch',
+        field: 'filter',
         title: '自定义远程搜索方法'
       },
       {
         type: 'switch',
-        field: 'clearFilterAfterSelect',
+        field: 'reserveKeyword',
         title: '是否在可过滤和多选的情况下选中一个选项后保留当前的搜索关键词',
         value: true,
         props: {
@@ -116,26 +99,6 @@ export default {
           size: 'small'
         }
       }, 
-      {
-        type: 'select',
-        field: 'placement',
-        title: '菜单的弹出位置',
-        value: 'bottom',
-        options: [
-          { label: 'top-start', value: 'top-start' }, 
-          { label: 'top', value: 'top' },
-          { label: 'top-end', value: 'top-end' }, 
-          { label: 'right-start', value: 'right-start' },
-          { label: 'right', value: 'right' }, 
-          { label: 'right-end', value: 'right-end' }, 
-          { label: 'bottom-start', value: 'bottom-start' },
-          { label: 'bottom', value: 'bottom' }, 
-          { label: 'bottom-end', value: 'bottom-end' }, 
-          { label: 'left-start', value: 'left-start' },
-          { label: 'left', value: 'left' }, 
-          { label: 'left-end', value: 'left-end' }, 
-        ]
-      }
     ]);
   }
 };

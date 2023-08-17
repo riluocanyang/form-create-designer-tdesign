@@ -7,7 +7,7 @@
       v-model:visible="visible"
       :close-btn="false"
       :header="title || t('struct.title')"
-      style="width: 500px"
+      width="500px"
     >
       <template #body>
         <template v-if="isLoading">

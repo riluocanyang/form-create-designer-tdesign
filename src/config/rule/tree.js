@@ -45,7 +45,7 @@ export default {
       makeOptionsRule(t, 'props.data', false),
       {
         type: 'switch',
-        field: 'accordion',
+        field: 'expandMutex',
         title: '是否使用手风琴展开模式',
         props: {
           size: 'small'
@@ -53,26 +53,32 @@ export default {
       },
       {
         type: 'switch',
-        field: 'animated',
-        title: '是否有展开动画',
-        value: true,
+        field: 'expandAll',
+        title: '是否展开全部节点',
         props: {
           size: 'small'
         }
       },
       {
         type: 'switch',
-        field: 'cancelable',
-        title: '选中之后是否允许取消',
-        value: true,
+        field: 'draggable',
+        title: '节点是否可拖拽',
         props: {
           size: 'small'
         }
       },
       {
         type: 'switch',
-        field: 'cascade',
-        title: '是否关联选项',
+        field: 'disabled',
+        title: '是否禁用树操作',
+        props: {
+          size: 'small'
+        }
+      },
+      {
+        type: 'switch',
+        field: 'disableCheck',
+        title: '禁用复选框',
         props: {
           size: 'small'
         }
@@ -80,73 +86,56 @@ export default {
       {
         type: 'switch',
         field: 'checkable',
-        title: '是否显示选择框',
+        title: '隐藏节点复选框',
+        props: {
+          size: 'small'
+        }
+      },
+      {
+        type: 'switch',
+        field: 'activable',
+        title: '节点是否可高亮',
+        props: {
+          size: 'small'
+        }
+      },
+      {
+        type: 'switch',
+        field: 'activeMultiple',
+        title: '是否允许多个节点同时高亮',
+        props: {
+          size: 'small'
+        }
+      },
+      {
+        type: 'switch',
+        field: 'transition',
+        title: '是否使用过渡动画',
         value: true,
         props: {
           size: 'small'
-        },
-        control: [
-          {
-            value: true,
-            rule: [
-              {
-                type: 'select',
-                field: 'checkboxPlacement',
-                title: '复选框的位置',
-                value: 'left',
-                options: [
-                  { label: '左边', value: 'left' },
-                  { label: '右边', value: 'right' },
-                ]
-              }
-            ]
-          }
-        ]
+        }
+      },
+
+      {
+        type: 'switch',
+        field: 'line',
+        title: '是否显示连接线',
+        props: {
+          size: 'small'
+        }
       },
       {
         type: 'select',
-        field: 'checkStrategy',
-        title: '勾选策略',
+        field: 'valueMode',
+        title: '选中值模式',
         value: 'all',
         info: t('components.tree.props.checkStrategyInfo'),
         options: [
           { label: t('components.tree.props.all'), value: 'all' },
-          { label: t('components.tree.props.parent'), value: 'parent' },
-          { label: t('components.tree.props.child'), value: 'child' }
+          { label: t('components.tree.props.parent'), value: 'parentFirst' },
+          { label: t('components.tree.props.child'), value: 'onlyLeaf' }
         ]
-      },
-      {
-        type: 'input',
-        field: 'childrenField',
-        title: '自定义 children 字段名',
-        info: t('components.tree.props.customInfo'),
-        props: {
-          placeholder: 'children'
-        }
-      },
-      {
-        type: 'input',
-        field: 'keyField',
-        title: '自定义 key 字段名',
-        props: {
-          placeholder: 'key'
-        }
-      },
-      {
-        type: 'input',
-        field: 'labelField',
-        title: '自定义 label 字段名',
-        props: {
-          placeholder: 'label'
-        }
-      },
-      {
-        type: 'input',
-        field: 'disabledField',
-        title: '自定义 disabled 字段名',
-        props: {
-          placeholder: 'disabled'
-        }
       },
     ]);
   }

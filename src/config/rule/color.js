@@ -31,9 +31,9 @@ export default {
       },
       {
         type: 'switch',
-        field: 'showAlpha',
+        field: 'enableAlpha',
         title: '是否可调节 alpha 通道',
-        value: true,
+        value: false,
         props: {
           size: 'small'
         }
@@ -47,33 +47,14 @@ export default {
         }
       },
       {
-        type: 'select',
-        field: 'actions',
-        title: '显示按钮',
+        type: 'switch',
+        field: 'clearable',
+        title: '是否支持清除',
+        value: false,
         props: {
-          multiple: true
-        },
-        options: [
-          { label: t('components.colorPicker.props.confirm'), value: 'confirm' },
-          { label: t('components.colorPicker.props.clear'), value: 'clear' },
-        ]
+          size: 'small'
+        }
       },
-      {
-        type: 'select',
-        field: 'modes',
-        title: '颜色选择器支持颜色的格式',
-        info: t('components.colorPicker.props.modesInfo'),
-        value: ['rgb','hex','hsl'],
-        props: {
-          multiple: true,
-        },
-        options: [
-          { label: 'hsl', value: 'hsl' },
-          { label: 'hsv', value: 'hsv' },
-          { label: 'hex', value: 'hex' },
-          { label: 'rgb', value: "rgb", disabled: true }
-        ]
-      }
     ]);
   }
 };

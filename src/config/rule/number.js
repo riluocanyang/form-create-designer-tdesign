@@ -29,7 +29,7 @@ export default {
       title: '设置计数器允许的最大值',
     }, {
       type: 'inputNumber',
-      field: 'precision',
+      field: 'decimalPlaces',
       title: '数值保留的精度值',
       value: 0,
       props: { min: 0 }
@@ -45,21 +45,8 @@ export default {
       props: {
         size: 'small',
       }
-    }, {
-      type: 'switch',
-      field: 'showButton',
-      title: '是否有按钮',
-      value: true,
-      props: {
-        size: 'small',
-      }
-    }, {
-      type: 'select',
-      field: 'buttonPlacement',
-      title: '加减按钮的位置',
-      value: 'right',
-      options: [{ label: 'right', value: 'right' }, { label: 'both', value: 'both' }]
-    }, {
+    },
+    {
       type: 'input',
       field: 'placeholder',
       title: '提示信息',

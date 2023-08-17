@@ -1,59 +1,47 @@
 export default function form({ t }) {
   return [
+    // {
+    //   type: 'radio',
+    //   field: 'layout',
+    //   value: 'vertical',
+    //   title: t('form.layout'),
+    //   options: [
+    //     { value: 'vertical', label: 'vertical' },
+    //     { value: 'inline', label: 'inline' },
+    //   ]
+    // },
     {
       type: 'radio',
-      field: 'labelPlacement',
+      field: 'labelAlign',
       value: 'left',
-      title: t('form.labelPlacement'),
-      options: [
-        { value: 'left', label: 'left' },
-        { value: 'top', label: 'top' },
-      ]
-    },
-    {
-      type: 'radio',
-      field: 'requireMarkPlacement',
-      value: 'right',
-      title: t('form.placementRequireMark'),
+      title: t('form.labelAlign'),
       options: [
         { value: 'left', label: 'left' },
         { value: 'right', label: 'right' },
-        { value: 'right-hanging', label: 'right-hanging' },
+        { value: 'top', label: 'top' },
       ]
     },
-    {
-      type: 'radio',
-      field: 'showRequireMark',
-      value: undefined,
-      title: t('form.showRequireMark'),
-      info: t('form.showRequireMarkInfo'),
-      options: [
-        { value: false, label: t('form.hideRequireMarkLabel') },
-      ]
-    },
-    {
-      type: 'select',
-      field: 'size',
-      value: 'small',
-      title: t('form.size'),
-      options: [
-        { value: 'large', label: 'large' },
-        { value: 'medium', label: 'medium' },
-        { value: 'small', label: 'small' },
-        { value: 'tiny', label: 'tiny' },
-      ]
-    },
+    // {
+    //   type: 'switch',
+    //   field: 'requiredMark',
+    //   value: true,
+    //   title: t('form.requiredMark'),
+    //   props: {
+    //     size: 'small',
+    //   }
+    // },
     {
       type: 'input',
       field: 'labelWidth',
-      value: 'auto',
+      value: '100px',
       title: t('form.labelWidth'),
     },
+
     {
       type: 'switch',
-      field: 'show-feedback',
+      field: 'showErrorMessage',
       value: true,
-      title: t('form.showFeedback'),
+      title: t('form.showErrorMessage'),
       props: {
         size: 'small',
       }

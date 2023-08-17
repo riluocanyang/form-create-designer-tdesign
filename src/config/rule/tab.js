@@ -2,21 +2,21 @@ import { localeProps } from '../../utils';
 import tabname from '../../utils/tabname';
 
 const label = '标签页';
-const name = 'tab';
+const name = 't-tabs';
 
 export default {
   icon: 'icon-tab',
   label,
   name,
-  children: 'tab-pane',
+  children: 't-tab-panel',
   childrenLen: 2,
   mask: false,
   rule({ t }) {
     return {
-      type: 'n-tabs',
+      type: 't-tabs',
       style: 'width:100%;',
       props: {
-        type: 'line',
+        theme: 'normal',
         defaultValue: String(tabname()),
       },
       children: []
@@ -31,13 +31,31 @@ export default {
         info: t('components.tab.props.defaultValueInfo')
       },
       {
+        type: 'switch',
+        field: 'disabled',
+        title: '是否禁用',
+        props: {
+          size: 'small',
+        }
+      },
+      {
+        type: 'switch',
+        field: 'addable',
+        title: '选项卡是否可增加',
+        props: {
+          size: 'small',
+        }
+      },
+      {
         type: 'radio',
-        field: 'trigger',
+        field: 'placement',
         value: 'click',
-        title: '触发 tab 的方式',
+        title: '选项卡位置',
         options: [
-          { value: 'click', label: 'click' },
-          { value: 'hover', label: 'hover' },
+          { value: 'left', label: 'left' },
+          { value: 'top', label: 'top' },
+          { value: 'bottom', label: 'bottom' },
+          { value: 'right', label: 'right' },
         ]
       },
       {
@@ -46,62 +64,24 @@ export default {
         value: 'medium',
         title: '标签页的尺寸',
         options: [
-          { value: 'small', label: 'small' },
           { value: 'medium', label: 'medium' },
           { value: 'large', label: 'large' },
         ]
       },
       {
         type: 'select',
-        field: 'type',
+        field: 'theme',
         title: '标签类型',
-        value: 'bar',
+        value: 'normal',
         options: [
-          { label: 'bar', value: 'bar' },
-          { label: 'line', value: 'line' },
           { label: 'card', value: 'card' },
-          { label: 'segment', value: 'segment' }
+          { label: 'normal', value: 'normal' }
         ],
-        control: [
-          {
-            handle(val) {
-              return val === 'card';
-            },
-            rule: [{
-              type: 'switch',
-              field: 'closable',
-              title: '标签是否可关闭',
-              info: t('components.tab.props.closableInfo')
-            }]
-          },
-          {
-            handle(val) {
-              return val === 'line' || val === 'bar';
-            },
-            rule: [{
-              type: 'select',
-              field: 'justifyContent',
-              title: 'flex 布局下主轴的排列方式',
-              info: t('components.tab.props.justifyContentInfo'),
-              props: {
-                clearable: true,
-              },
-              options: [
-                { label: 'end', value: 'end' },
-                { label: 'start', value: 'start' },
-                { label: 'center', value: 'center' },
-                { label: 'space-evenly', value: 'space-evenly' },
-                { label: 'space-around', value: 'space-around' },
-                { label: 'space-between', value: 'space-between' },
-              ],
-            }]
-          }
-        ]
       },
       {
         type: 'switch',
-        field: 'animated',
-        title: '标签页切换是否使用动画',
+        field: 'dragSort',
+        title: '是否开启拖拽调整顺序',
         value: true,
         props: {
           size: 'small'

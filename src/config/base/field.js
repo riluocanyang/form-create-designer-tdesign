@@ -1,6 +1,3 @@
-import IconRefresh from '../../components/IconRefresh.vue';
-import { markRaw } from 'vue';
-
 export default function field({ t }) {
   return [
     {
@@ -36,17 +33,17 @@ export default function field({ t }) {
     }, {
       type: 'col',
       props: {
-        span: 24
+        span: 12
       },
       children: [
         {
-          type: 'n-space',
+          type: 't-space',
           children: [
             {
-              type: 'n-button',
+              type: 't-button',
               props: {
-                type: 'info',
-                size: 'tiny',
+                theme: 'primary',
+                size: 'small',
               },
               inject: true,
               on: {
@@ -62,10 +59,11 @@ export default function field({ t }) {
               native: true,
               children: [{ type: 'i', class: 'fc-icon icon-delete' }, t('form.clear')]
             }, {
-              type: 'n-button',
+              type: 't-button',
               props: {
-                type: 'success',
-                size: 'tiny'
+                theme: 'success',
+                size: 'small',
+                // icon: () => <IconRefresh style={{width: '16px'}} />
               },
               inject: true,
               on: {
@@ -78,7 +76,10 @@ export default function field({ t }) {
                 },
               },
               native: true,
-              children: [{type: 'template', slot: 'icon', children: [{type: 'n-icon', props: {component: markRaw(IconRefresh)}}]  }, t('form.refresh')]
+              children: [
+                { type: 'template', slot: 'icon', children: [{type: 't-icon', props: {name: 'refresh', width: '16px'}}]},
+                t('form.refresh')
+              ]
             },
           ]
         }

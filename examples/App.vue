@@ -1,6 +1,6 @@
 <template>
-  <t-config-provider style="height: 100vh" :global-config="globalConfig">
-    <div id="app">
+  <div id="app">
+    <t-config-provider :global-config="globalConfig">
       <div class="_fc-t-header">
         <img class="_fc-t-logo" src="http://form-create.com/logo.png" />
         <div class="_fc-t-name">form-create-designer-tdesign</div>
@@ -15,6 +15,7 @@
           </t-space>
         </div>
       </div>
+      
       <fc-designer ref="designer" :locale="locale" />
 
       <t-dialog
@@ -22,7 +23,7 @@
         :close-btn="false"
         :header="title[type]"
         class="_fc-t-dialog"
-        style="width: 600px"
+        width="600px"
       >
         <template #body>
           <template v-if="isLoading">
@@ -41,8 +42,8 @@
           </template>
         </template>
       </t-dialog>
-    </div>
-  </t-config-provider>
+    </t-config-provider>
+  </div>
 </template>
 
 <script>

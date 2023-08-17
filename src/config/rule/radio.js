@@ -40,17 +40,6 @@ export default {
           size: 'small',
         }
       },
-      { 
-        type: 'switch',
-        field: 'type',
-        title: '按钮形式',
-        value: 'default',
-        props: {
-          checkedValue: 'button',
-          uncheckedValue: 'default',
-          size: 'small'
-        }
-      },
     ])
   }
 }

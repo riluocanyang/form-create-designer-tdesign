@@ -1,7 +1,7 @@
 import { localeProps } from '../../utils';
 
 const label = '按钮';
-const name = 'n-button';
+const name = 't-button';
 
 export default {
   icon: 'icon-button',
@@ -12,7 +12,7 @@ export default {
     return {
       type: name,
       props: {},
-      children: [t('components.n-button.name')],
+      children: [t('components.t-button.name')],
     };
   },
   props(_, { t }) {
@@ -31,7 +31,55 @@ export default {
           { label: 'large', value: 'large' },
           { label: 'medium', value: 'medium' },
           { label: 'small', value: 'small' },
-          { label: 'tiny', value: 'tiny' },
+          { label: 'extra-small', value: 'extra-small' },
+        ]
+      },
+      {
+        type: 'select',
+        field: 'theme',
+        title: '按钮的颜色',
+        value: 'primary',
+        options: [
+          { label: 'default', value: 'default' },
+          { label: 'primary', value: 'primary' },
+          { label: 'danger', value: 'danger' },
+          { label: 'warning', value: 'warning' },
+          { label: 'success', value: 'success' },
+        ]
+      },
+      {
+        type: 'select',
+        field: 'type',
+        title: '按钮的类型',
+        value: 'default',
+        options: [
+          { label: 'submit', value: 'submit' },
+          { label: 'reset', value: 'reset' },
+          { label: 'button', value: 'button' },
+        ]
+      },
+      {
+        type: 'select',
+        field: 'shape',
+        title: '按钮的形状',
+        value: 'rectangle',
+        options: [
+          { label: 'rectangle', value: 'rectangle' },
+          { label: 'square', value: 'square' },
+          { label: 'round', value: 'round' },
+          { label: 'circle', value: 'circle' },
+        ]
+      },
+      {
+        type: 'select',
+        field: 'variant',
+        title: '按钮形式',
+        value: 'base',
+        options: [
+          { label: 'base', value: 'base' },
+          { label: 'outline', value: 'outline' },
+          { label: 'dashed', value: 'dashed' },
+          { label: 'text', value: 'text' },
         ]
       },
       {
@@ -41,23 +89,14 @@ export default {
         value: 'button',
         options: [
           { label: 'button', value: 'button' },
-          { label: 'a', value: 'a' }
+          { label: 'a', value: 'a' },
+          { label: 'div', value: 'div' },
         ]
-      }, 
+      },
       {
-        type: 'select',
-        field: 'type',
-        title: '按钮的类型',
-        value: 'default',
-        options: [
-          { label: 'default', value: 'default' },
-          { label: 'tertiary', value: 'tertiary' },
-          { label: 'primary', value: 'primary' },
-          { label: 'success', value: 'success' },
-          { label: 'info', value: 'info' },
-          { label: 'warning', value: 'warning' },
-          { label: 'error', value: 'error' }
-        ]
+        type: 'input',
+        field: 'icon',
+        title: '图标类名',
       },
       {
         type: 'switch',
@@ -69,72 +108,8 @@ export default {
       },
       {
         type: 'switch',
-        field: 'secondary',
-        title: '是否是次要按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'tertiary',
-        title: '是否是三级按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'quaternary',
-        title: '是否是四级按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'text',
-        title: '是否显示为文本按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'dashed',
-        title: '按钮边框是否为虚线',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
         field: 'ghost',
-        title: '按钮是否透明',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'round',
-        title: '是否圆角按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'circle',
-        title: '是否圆形按钮',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
-        field: 'strong',
-        title: '按钮文字是否加粗',
+        title: '是否为幽灵按钮',
         props: {
           size: 'small'
         }
@@ -147,22 +122,6 @@ export default {
           size: 'small'
         }
       },
-      {
-        type: 'ColorPicker',
-        field: 'color',
-        title: '按钮颜色',
-        props: {
-          actions: ['clear']
-        }
-      },
-      {
-        type: 'ColorPicker',
-        field: 'textColor',
-        title: '按钮文字颜色',
-        props: {
-          actions: ['clear']
-        }
-      }
     ]);
   }
 };

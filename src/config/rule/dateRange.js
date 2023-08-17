@@ -2,7 +2,7 @@ import uniqueId from '@form-create/utils/lib/unique';
 import { localeProps, makeRequiredRule } from '../../utils';
 
 const label = '日期选择器';
-const name = 'datePicker';
+const name = 'dateRangePicker';
 
 export default {
   icon: 'icon-date',
@@ -12,10 +12,11 @@ export default {
     return {
       type: name,
       field: uniqueId(),
-      title: t('components.datePicker.name'),
+      title: t('components.dateRangePicker.name'),
       info: '',
       $required: false,
       props: {},
+      value: ['2022-01-01 11:11:11', '2022-08-08 12:12:12']
     };
   },
   props(_, { t }) {

@@ -2,7 +2,7 @@ import uniqueId from '@form-create/utils/lib/unique';
 import { localeProps, makeRequiredRule } from '../../utils';
 
 const label = '评分';
-const name = 'rate';
+const name = 't-rate';
 
 export default {
   icon: 'icon-rate',
@@ -22,16 +22,11 @@ export default {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
       {
-        type: 'radio',
+        type: 'input',
         field: 'size',
-        value: 'medium',
         title: '图标尺寸',
+        value: '20px',
         info: t('components.rate.props.sizeInfo'),
-        options: [
-          { value: 'large', label: 'large' },
-          { value: 'medium', label: 'medium' },
-          { value: 'small', label: 'small' },
-        ]
       },
       {
         type: 'inputNumber',
@@ -45,16 +40,26 @@ export default {
       {
         type: 'inputNumber',
         field: 'defaultValue',
-        title: '默认已激活图标个数',
+        title: '默认选择评分的值',
         value: 0,
         props: {
           min: 0,
         }
       },
       {
+        type: 'inputNumber',
+        field: 'gap',
+        title: '评分图标的间距',
+        value: 4,
+        props: {
+          min: 1,
+        }
+      },
+      {
         type: 'switch',
-        field: 'readonly',
-        title: '只读，交互失效',
+        field: 'disabled',
+        title: '是否禁用评分',
+        value: false,
         props: {
           size: 'small',
         }
