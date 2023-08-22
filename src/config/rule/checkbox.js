@@ -1,5 +1,5 @@
 import { uniqueId } from "@form-create/utils";
-import { localeProps, makeOptionsRule, makeRequiredRule } from "../../utils";
+import { localeProps, makeOptionsRule, makeRequiredRule, makeExternalCommonRule } from "../../utils";
 
 const label = '多选框'
 const name = 'checkbox'
@@ -32,6 +32,7 @@ export default {
   props(_, { t }) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(), 
+      ...makeExternalCommonRule(),
       makeOptionsRule(t, 'options'),
       {
         type: 'input', 

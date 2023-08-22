@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { localeProps, makeRequiredRule } from '../../utils';
+import { localeProps, makeRequiredRule, makeExternalCommonRule } from '../../utils';
 
 const label = '日期选择器';
 const name = 'datePicker';
@@ -21,6 +21,7 @@ export default {
   props(_, { t }) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
+      ...makeExternalCommonRule(),
       {
         type: 'Struct',
         field: 'pickerOptions',

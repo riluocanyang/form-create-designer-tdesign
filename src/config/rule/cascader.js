@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { localeProps, makeOptionsRule, makeRequiredRule } from '../../utils/index';
+import { localeProps, makeOptionsRule, makeRequiredRule, makeExternalCommonRule } from '../../utils/index';
 
 const label = '级联选择器';
 const name = 't-cascader';
@@ -33,6 +33,7 @@ export default {
   props(_, { t }) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
+      ...makeExternalCommonRule(),
       makeOptionsRule(t, 'props.options', false),
       {
         type: 'input',

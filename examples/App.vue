@@ -48,7 +48,7 @@
 
 <script>
 import is from "@form-create/utils/lib/type";
-import jsonlint from "jsonlint-mod";
+// import jsonlint from "jsonlint-mod";
 import { javascript } from "@codemirror/lang-javascript";
 import { json } from "@codemirror/lang-json";
 import { basicSetup, EditorView } from "codemirror";
@@ -257,9 +257,9 @@ export default defineComponent({
 <\/script>`;
     },
   },
-  beforeCreate() {
-    window.jsonlint = jsonlint;
-  },
+  // beforeCreate() {
+  //   window.jsonlint = jsonlint;
+  // },
 };
 </script>
 

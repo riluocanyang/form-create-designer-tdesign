@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { localeProps, makeOptionsRule, makeRequiredRule } from '../../utils/index';
+import { localeProps, makeOptionsRule, makeRequiredRule, makeExternalCommonRule } from '../../utils/index';
 
 const lable = '单选框';
 const name = 'radio'
@@ -31,6 +31,7 @@ export default {
   props(_, {t}) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
+      ...makeExternalCommonRule(),
       makeOptionsRule(t, 'options'),
       {
         type: 'switch', 

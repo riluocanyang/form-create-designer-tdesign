@@ -8,6 +8,7 @@
       :close-btn="false"
       :header="title || t('struct.title')"
       width="500px"
+      :footer="false"
     >
       <template #body>
         <template v-if="isLoading">
@@ -17,9 +18,9 @@
         <span class="_fc_err" v-if="err">
           {{ t("struct.error") }}{{ err !== true ? err : "" }}
         </span>
-        <span class="dialog-footer">
+        <span class="dialog-footer" style="float: right; margin-top: 16px">
           <t-space>
-            <t-button @click="visible = false" size="small">{{
+            <t-button theme="default" @click="visible = false" size="small">{{
               t("struct.cancel")
             }}</t-button>
             <t-button theme="primary" @click="onOk" size="small">{{

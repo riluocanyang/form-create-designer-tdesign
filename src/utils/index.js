@@ -2,6 +2,7 @@ import is, { hasProperty } from "@form-create/utils/lib/type";
 import { parseFn } from "@form-create/utils/lib/json";
 import toCase from "@form-create/utils/lib/tocase";
 import { computed, isRef, unref, ref } from "vue";
+import { manifest } from 'tdesign-icons-vue-next'
 import ZhCn from "../locale/zh-cn";
 
 export function makeRequiredRule() {
@@ -10,6 +11,15 @@ export function makeRequiredRule() {
     field: "formCreate$required",
     title: "是否必填",
   };
+}
+
+export function makeExternalCommonRule() {
+  return [
+    { type: 'CustomDefaultValue', field: 'defaultValue', title: '默认值', props: { defaultValue: ''} },
+    { type: 'switch', field: 'processVariables', title: '是否流程变量', props: { size: 'small'} },
+    { type: 'switch', field: 'hidden', title: '是否隐藏属性', props: { size: 'small'} },
+    { type: 'switch', field: 'disabled', title: '是否禁用属性', props: { size: 'small'} },
+  ]
 }
 
 export function makeOptionsRule(t, to, flag) {

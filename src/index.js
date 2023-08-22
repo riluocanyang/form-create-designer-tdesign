@@ -15,6 +15,7 @@ import ColorPicker from "./components/ColorPicker.vue";
 import CustomAlert from "./components/CustomAlert.vue";
 import FcEditor from "@form-create/component-wangeditor";
 import TableOptions from "./components/TableOptions.vue";
+import CustomDefaultValue from "./components/CustomDefaultValue.vue"
 
 designerForm.component("draggable", draggable);
 designerForm.component("DragTool", DragTool);
@@ -27,6 +28,7 @@ designerForm.component("ColorPicker", ColorPicker);
 designerForm.component("CustomAlert", CustomAlert);
 designerForm.component("FcEditor", FcEditor);
 designerForm.component("Fetch", Fetch);
+designerForm.component("CustomDefaultValue", CustomDefaultValue);
 formCreate.component("FcEditor", FcEditor);
 
 designerForm.register("_fc", {

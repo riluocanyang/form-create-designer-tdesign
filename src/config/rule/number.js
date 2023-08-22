@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { localeProps, makeRequiredRule } from '../../utils';
+import { localeProps, makeRequiredRule, makeExternalCommonRule } from '../../utils';
 
 const label = '计数器'
 const name = 'inputNumber'
@@ -19,7 +19,7 @@ export default {
     }
   },
   props(_, { t }) {
-    return localeProps(t, name + '.props', [makeRequiredRule(), {
+    return localeProps(t, name + '.props', [makeRequiredRule(), ...makeExternalCommonRule(), {
       type: 'inputNumber',
       field: 'min',
       title: '设置计数器允许的最小值'

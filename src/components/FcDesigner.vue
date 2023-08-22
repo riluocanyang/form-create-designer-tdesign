@@ -146,7 +146,7 @@
                   :option="baseForm.options"
                   @change="baseChange"
                 ></DragForm>
-                <!-- 验证配置 -->
+                <!-- 属性配置 -->
                 <t-divider>{{ t("designer.config.props") }}</t-divider>
                 <DragForm
                   v-model:api="propsForm.api"
@@ -155,6 +155,7 @@
                   @change="propChange"
                   @removeField="propRemoveField"
                 ></DragForm>
+                <!-- 验证配置 -->
                 <t-divider v-if="showBaseRule">{{
                   t("designer.config.validate")
                 }}</t-divider>

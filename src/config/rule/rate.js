@@ -1,5 +1,5 @@
 import uniqueId from '@form-create/utils/lib/unique';
-import { localeProps, makeRequiredRule } from '../../utils';
+import { localeProps, makeRequiredRule, makeExternalCommonRule } from '../../utils';
 
 const label = '评分';
 const name = 't-rate';
@@ -21,6 +21,7 @@ export default {
   props(_, { t }) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
+      ...makeExternalCommonRule(),
       {
         type: 'input',
         field: 'size',
