@@ -49,7 +49,7 @@ export default function form({ t }) {
     {
       type: 'switch',
       field: 'formCreateSubmitBtn',
-      value: true,
+      value: false,
       title: t('form.submitBtn'),
       props: {
         size: 'small',

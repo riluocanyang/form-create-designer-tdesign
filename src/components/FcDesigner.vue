@@ -270,7 +270,7 @@ export default defineComponent({
             layout: 'vertical',
             labelAlign: "left",
             labelWidth: "100px",
-            formCreateSubmitBtn: true,
+            formCreateSubmitBtn: false,
             formCreateResetBtn: false,
           },
           submitBtn: false,

@@ -15,7 +15,6 @@ export function makeRequiredRule() {
 
 export function makeExternalCommonRule() {
   return [
-    { type: 'CustomDefaultValue', field: 'defaultValue', title: '默认值', props: { defaultValue: ''} },
     { type: 'switch', field: 'processVariables', title: '是否流程变量', props: { size: 'small'} },
     { type: 'switch', field: 'hidden', title: '是否隐藏属性', props: { size: 'small'} },
     { type: 'switch', field: 'disabled', title: '是否禁用属性', props: { size: 'small'} },
@@ -122,20 +121,20 @@ const _toJSON = {
         ? c === "\\"
           ? (tmp[i] = "\\\\")
           : c === '"'
-          ? (tmp[i] = '\\"')
-          : 0
+            ? (tmp[i] = '\\"')
+            : 0
         : (tmp[i] =
             c === "\n"
               ? "\\n"
               : c === "\r"
-              ? "\\r"
-              : c === "\t"
-              ? "\\t"
-              : c === "\b"
-              ? "\\b"
-              : c === "\f"
-              ? "\\f"
-              : ((c = c.charCodeAt()), "\\u00" + (c > 15 ? 1 : 0) + (c % 16)));
+                ? "\\r"
+                : c === "\t"
+                  ? "\\t"
+                  : c === "\b"
+                    ? "\\b"
+                    : c === "\f"
+                      ? "\\f"
+                      : ((c = c.charCodeAt()), "\\u00" + (c > 15 ? 1 : 0) + (c % 16)));
     }
     return '"' + tmp.join("") + '"';
   },

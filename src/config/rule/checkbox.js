@@ -20,13 +20,14 @@ export default {
       },
       $required: false,
       props: {},
-      options: [1, 2].map(value => {
+      value: ['1'],
+      options: ['1', '2'].map(value => {
         return {
           label: opt + value,
           value,
         }
       }),
-      value: ['']
+      
     };
   },
   props(_, { t }) {
@@ -35,12 +36,10 @@ export default {
       ...makeExternalCommonRule(),
       makeOptionsRule(t, 'options'),
       {
-        type: 'input', 
-        field: 'defaultValue', 
+        type: 'Struct', 
+        field: 'value', 
         title: '默认选中值',
-        props: {
-          size: 'small'
-        }
+        props: { defaultValue: ['1'] }
       },
       {
         type: 'switch', 

@@ -26,8 +26,14 @@ export default {
       {
         type: 'Struct',
         field: 'pickerOptions',
+        title: '默认值',
+        props: { defaultValue: ['2022-01-01 11:11:11', '2022-08-08 12:12:12'] }
+      },
+      {
+        type: 'Struct',
+        field: 'pickerOptions',
         title: '当前时间日期选择器特有的选项',
-        props: { defaultValue: {} }
+        props: { defaultValue:  {} }
       },
       {
         type: 'switch',
