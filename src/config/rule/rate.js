@@ -83,7 +83,7 @@ export default {
         }
       },
       {
-        type: 'ColorPicker',
+        type: 'CustomColorPicker',
         field: 'color',
         title: '已激活图标颜色',
         props: {

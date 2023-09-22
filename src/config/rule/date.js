@@ -22,10 +22,18 @@ export default {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
       ...makeExternalCommonRule(),
+      // {
+      //   type: 'input',
+      //   field: 'defaultValue',
+      //   title: '时间默认值',
+      //   value: '2022-01-01',
+      //   props: { defaultValue: '2022-01-01' }
+      // },
       {
         type: 'Struct',
         field: 'pickerOptions',
         title: '当前时间日期选择器特有的选项',
+        value: {},
         props: { defaultValue: {} }
       },
       {

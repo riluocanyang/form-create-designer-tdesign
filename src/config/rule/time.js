@@ -16,12 +16,20 @@ export default {
       info: '',
       $required: false,
       props: {},
+      value: '',
     };
   },
   props(_, { t }) {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
       ...makeExternalCommonRule(),
+      {
+        type: 'input',
+        field: 'defaultValue',
+        title: '时间默认值',
+        value: '',
+        props: { defaultValue: '' }
+      },
       {
         type: 'Struct',
         field: 'pickerOptions',

@@ -22,7 +22,7 @@ export default {
       [
         makeRequiredRule(),
         ...makeExternalCommonRule(),
-        { type: 'CustomDefaultValue', field: 'defaultValue', title: '默认值', props: { defaultValue: ''} },
+        { type: 'CustomDefaultValue', field: 'defaultValue', title: '默认值', props: { defaultValue: '' } },
         { type: 'input', field: 'placeholder', title: '输入框占位文本' },
         { type: 'input', field: 'label', title: '左侧文本' },
         { type: 'input', field: 'prefixIcon', title: '组件前置图标' },

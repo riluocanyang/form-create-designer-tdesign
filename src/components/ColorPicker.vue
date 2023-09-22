@@ -1,36 +1,49 @@
 <template>
   <div class="_fc_color_picker">
     <t-color-picker
-      :value="modelValue"
+      :value="colorValue"
       :default-value="defaultValue"
       :swatchColors="swatches"
-      @update:value="updateValue"
+      @change="onChange"
     />
   </div>
 </template>
 <script>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 
 export default defineComponent({
+  name: "CustomColorPicker",
   props: {
-    modelValue: [String],
+    modelValue: [String],  // 对应 value 字段，否则不生效
     defaultValue: [String],
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    const { modelValue, defaultValue } = props;
+    const { defaultValue } = props;
+    const colorValue = ref('')
     const swatches = ref([
       '#FFCC33',
       '#18A058',
       '#8b0000'
     ])
-    function updateValue() {
-      emit('update:modelValue', modelValue);
+
+    function onChange(value) {
+      emit('update:modelValue', value);
     }
+    
+    watch(
+      () => props.modelValue,
+      (newValue) => {
+        colorValue.value = newValue || defaultValue
+      },
+      {}
+    )
+    
     return {
-      updateValue,
       defaultValue,
-      swatches
+      swatches,
+      colorValue,
+      onChange,
     }
   },
 })

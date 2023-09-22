@@ -663,8 +663,9 @@ export default defineComponent({
         }
       },
       propChange(field, value, _, fapi) {
+        console.log('propChange', data.activeRule)
         if (data.activeRule && fapi[data.activeRule._id] === data.activeRule) {
-          const org = field;
+          const org = field === 'defaultValue' ? 'value' : field;
           if (field.indexOf("formCreate") === 0) {
             field = field.replace("formCreate", "");
             if (!field) return;
@@ -682,6 +683,9 @@ export default defineComponent({
               data.activeRule[field] = value;
             }
           } else {
+            if (field === 'defaultValue') {
+              data.activeRule.value = value
+            }
             data.activeRule.props[field] = value;
           }
           data.activeRule.config.config?.watch?.[org]?.({

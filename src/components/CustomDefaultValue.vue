@@ -1,7 +1,7 @@
 <template>
   <div class="_fc_default-value">
     <t-input-adornment :append="tldSelect">
-      <t-input placeholder="请输入内容" :value="modelValue" @change="handleInputChange" :default-value="defaultValue"/>
+      <t-input placeholder="请输入内容" :value="resValue" @change="handleInputChange" :default-value="defaultValue"/>
     </t-input-adornment>
   </div>
 </template>
@@ -9,14 +9,13 @@
 import { defineComponent, ref, computed } from "vue";
 export default defineComponent({
   name: "CustomDefaultValue",
-  // emits: ["input", "update:modelValue"],
+  emits: ["input", "update:modelValue"],
   props: {
-    // modelValue: [String],
+    modelValue: [String],
     defaultValue: [String],
   },
-  emits: ['update:modelValue'],
   setup(props, { emit }) {
-    const { defaultValue } = props;
+    const { defaultValue, modelValue } = props;
     const selectOptions = [
       {
         label: '当前用户账号',
@@ -62,8 +61,13 @@ export default defineComponent({
     const selectedValue = ref('')
     const inputValue = ref('')
 
-    const modelValue = computed(() => {
-      const newValue = inputValue.value + selectedValue.value
+    const resValue = computed(() => {
+      let newValue = ''
+      if (inputValue.value || selectedValue.value) {
+        newValue = inputValue.value + selectedValue.value
+      } else {
+        newValue = defaultValue
+      }
       emit('update:modelValue', newValue);
       return newValue
     })
@@ -88,10 +92,11 @@ export default defineComponent({
 
     return {
       defaultValue,
-      modelValue,
+      // modelValue,
       tldSelect,
       selectedValue,
       inputValue,
+      resValue,
       handleInputChange
     }
   },

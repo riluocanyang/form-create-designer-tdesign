@@ -22,6 +22,13 @@ export default {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
       ...makeExternalCommonRule(),
+      // {
+      //   type: 'Struct',
+      //   field: 'defaultValue',
+      //   title: '默认值',
+      //   value: false,
+      //   props: { defaultValue: false }
+      // },
       {
         type: 'switch',
         field: 'disabled',

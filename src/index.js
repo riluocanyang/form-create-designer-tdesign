@@ -24,7 +24,7 @@ designerForm.component("Required", Required);
 designerForm.component("Validate", Validate);
 designerForm.component("Struct", Struct);
 designerForm.component("TableOptions", TableOptions);
-designerForm.component("ColorPicker", ColorPicker);
+designerForm.component("CustomColorPicker", ColorPicker);
 designerForm.component("CustomAlert", CustomAlert);
 designerForm.component("FcEditor", FcEditor);
 designerForm.component("Fetch", Fetch);

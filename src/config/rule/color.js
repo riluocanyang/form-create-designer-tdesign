@@ -23,6 +23,15 @@ export default {
       makeRequiredRule(),
       ...makeExternalCommonRule(),
       {
+        type: 'CustomColorPicker',
+        field: 'defaultValue',
+        title: '默认的颜色值',
+        value: '', // 必须加，否则 modelValue 不生效
+        props: {
+          defaultValue: ''
+        }
+      },
+      {
         type: 'switch',
         field: 'disabled',
         title: '是否禁用',
@@ -37,14 +46,6 @@ export default {
         value: false,
         props: {
           size: 'small'
-        }
-      },
-      {
-        type: 'ColorPicker',
-        field: 'defaultValue',
-        title: '默认的颜色值',
-        props: {
-          defaultValue: '#000000'
         }
       },
       {

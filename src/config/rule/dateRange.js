@@ -16,7 +16,7 @@ export default {
       info: '',
       $required: false,
       props: {},
-      value: ['2022-01-01 11:11:11', '2022-08-08 12:12:12']
+      value: ['', '']
     };
   },
   props(_, { t }) {
@@ -25,14 +25,16 @@ export default {
       ...makeExternalCommonRule(),
       {
         type: 'Struct',
-        field: 'pickerOptions',
+        field: 'defaultValue',
         title: '默认值',
-        props: { defaultValue: ['2022-01-01 11:11:11', '2022-08-08 12:12:12'] }
+        value: ['', ''],
+        props: { defaultValue: ['', ''] }
       },
       {
         type: 'Struct',
         field: 'pickerOptions',
         title: '当前时间日期选择器特有的选项',
+        value: {},
         props: { defaultValue:  {} }
       },
       {
