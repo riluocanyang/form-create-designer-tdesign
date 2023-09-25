@@ -43,14 +43,6 @@ export default {
         props: { defaultValue: [''] }
       },
       {
-        type: 'switch', 
-        field: 'disabled', 
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
         type: 'inputNumber',
         field: 'max',
         title: '可被勾选的 checkbox 的最大数量',

@@ -22,14 +22,6 @@ export default {
     return localeProps(t, name + '.props', [
       makeRequiredRule(),
       ...makeExternalCommonRule(),
-      {
-        type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      }
     ]);
   }
 };

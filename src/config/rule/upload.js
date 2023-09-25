@@ -87,14 +87,6 @@ export default {
         }
       }, 
       {
-        type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
         type: 'inputNumber',
         field: 'max',
         title: '限制上传文件数量',

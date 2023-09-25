@@ -38,14 +38,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
         field: 'clearable',
         title: '是否可清空',
         value: false,

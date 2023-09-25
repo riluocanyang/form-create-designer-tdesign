@@ -30,14 +30,6 @@ export default {
       //   props: { defaultValue: false }
       // },
       {
-        type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small',
-        }
-      },
-      {
         type: 'radio',
         field: 'size',
         title: '尺寸',

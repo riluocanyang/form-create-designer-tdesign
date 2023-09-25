@@ -58,15 +58,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '是否禁用评分',
-        value: false,
-        props: {
-          size: 'small',
-        }
-      },
-      {
-        type: 'switch',
         field: 'clearable',
         title: '是否可清空',
         info: t('components.rate.props.clearableInfo'),

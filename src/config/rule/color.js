@@ -33,14 +33,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
         field: 'enableAlpha',
         title: '是否可调节 alpha 通道',
         value: false,

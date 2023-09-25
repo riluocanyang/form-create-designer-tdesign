@@ -40,14 +40,6 @@ export default {
       //   value: '1',
       //   props: { defaultValue: '1' }
       // },
-      {
-        type: 'switch', 
-        field: 'disabled', 
-        title: '是否禁用', 
-        props: {
-          size: 'small',
-        }
-      },
     ])
   }
 }

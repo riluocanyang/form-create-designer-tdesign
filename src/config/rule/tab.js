@@ -32,14 +32,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small',
-        }
-      },
-      {
-        type: 'switch',
         field: 'addable',
         title: '选项卡是否可增加',
         props: {

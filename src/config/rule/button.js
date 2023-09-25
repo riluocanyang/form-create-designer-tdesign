@@ -100,14 +100,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '是否禁用状态',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
         field: 'ghost',
         title: '是否为幽灵按钮',
         props: {

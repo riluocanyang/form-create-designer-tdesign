@@ -39,14 +39,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
-        type: 'switch',
         field: 'clearable',
         title: '是否支持清除',
         value: false,

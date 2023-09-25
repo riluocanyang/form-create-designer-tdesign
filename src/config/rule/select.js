@@ -53,15 +53,7 @@ export default {
         props: {
           size: 'small'
         }
-      }, 
-      {
-        type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      }, 
+      },
       { 
         type: 'switch', 
         field: 'clearable', 

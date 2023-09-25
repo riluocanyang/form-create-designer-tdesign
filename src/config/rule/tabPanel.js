@@ -42,11 +42,6 @@ export default {
       },
       {
         type: 'switch',
-        field: 'disabled',
-        title: '是否禁用'
-      },
-      {
-        type: 'switch',
         field: 'draggable',
         title: '选项卡组件开启允许拖动排序时'
       },

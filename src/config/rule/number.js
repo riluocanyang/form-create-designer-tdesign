@@ -38,13 +38,6 @@ export default {
       field: 'step',
       title: '计数器步长',
       props: { min: 0 }
-    }, {
-      type: 'switch',
-      field: 'disabled',
-      title: '是否禁用计数器',
-      props: {
-        size: 'small',
-      }
     },
     {
       type: 'input',

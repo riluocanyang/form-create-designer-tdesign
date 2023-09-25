@@ -23,14 +23,6 @@ export default {
       makeRequiredRule(),
       ...makeExternalCommonRule(),
       {
-        type: 'switch',
-        field: 'disabled',
-        title: '是否禁用',
-        props: {
-          size: 'small'
-        }
-      },
-      {
         type: 'inputNumber',
         field: 'defaultValue',
         title: '默认值',
