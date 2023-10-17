@@ -663,7 +663,7 @@ export default defineComponent({
         }
       },
       propChange(field, value, _, fapi) {
-        console.log('propChange', data.activeRule)
+        console.log('propChange', field, data.activeRule)
         if (data.activeRule && fapi[data.activeRule._id] === data.activeRule) {
           const org = field === 'defaultValue' ? 'value' : field;
           if (field.indexOf("formCreate") === 0) {
@@ -685,6 +685,8 @@ export default defineComponent({
           } else {
             if (field === 'defaultValue') {
               data.activeRule.value = value
+            } else if (field === 'hidden') {
+              data.activeRule.hidden = value
             }
             data.activeRule.props[field] = value;
           }
