@@ -556,6 +556,9 @@ export default defineComponent({
             rule._control = rule.control;
             delete rule.control;
           }
+          if (rule.props?.defaultValue) {
+            rule.value = rule.props.defaultValue
+          }
           if (config) {
             rule = methods.makeRule(config, rule);
             if (_children) {
@@ -663,9 +666,8 @@ export default defineComponent({
         }
       },
       propChange(field, value, _, fapi) {
-        console.log('propChange', field, data.activeRule)
         if (data.activeRule && fapi[data.activeRule._id] === data.activeRule) {
-          const org = field === 'defaultValue' ? 'value' : field;
+          const org = field;
           if (field.indexOf("formCreate") === 0) {
             field = field.replace("formCreate", "");
             if (!field) return;
@@ -690,12 +692,21 @@ export default defineComponent({
             }
             data.activeRule.props[field] = value;
           }
+          
           data.activeRule.config.config?.watch?.[org]?.({
             field: org,
             value,
             api: fapi,
             rule: data.activeRule,
           });
+          if (field === 'defaultValue') {
+            data.activeRule.config.config?.watch?.[org]?.({
+              field: 'value',
+              value,
+              api: fapi,
+              rule: data.activeRule,
+            });
+          }
         }
       },
       validateChange(formData) {

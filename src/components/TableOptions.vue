@@ -25,7 +25,6 @@ export default defineComponent({
   },
   emits: ["input", "update:modelValue"],
   setup(props, { emit }) {
-    console.log('TableOptions')
     const t = inject("designer").setupState.t;
     const { modelValue } = props;
     if (!Array.isArray(modelValue)) {

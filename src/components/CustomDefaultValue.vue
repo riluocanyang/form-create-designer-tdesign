@@ -11,8 +11,8 @@ export default defineComponent({
   name: "CustomDefaultValue",
   emits: ["input", "update:modelValue"],
   props: {
-    modelValue: [String],
-    defaultValue: [String],
+    modelValue: [String], // 之前填充的值
+    defaultValue: [String], // 通过props传过来的值
   },
   setup(props, { emit }) {
     const { defaultValue, modelValue } = props;
@@ -35,19 +35,19 @@ export default defineComponent({
       },
       {
         label: '流程发起人账号',
-        value: '${starterUserId}'
+        value: '${ZXBPM_STARTER}'
       },
       {
         label: '流程发起人名',
-        value: '${starterUserName}'
+        value: '${ZXBPM_STARTER_NAME}'
       },
       {
         label: '流程发起人所属机构id',
-        value: '${starterDeptId}'
+        value: '${ZXBPM_STARTER_DEPT}'
       },
       {
         label: '流程发起人所属机构名',
-        value: '${starterDeptName}'
+        value: '${ZXBPM_STARTER_DEPT_NAME}'
       },
       {
         label: '当前时间',
@@ -60,17 +60,7 @@ export default defineComponent({
     ]
     const selectedValue = ref('')
     const inputValue = ref('')
-
-    const resValue = computed(() => {
-      let newValue = ''
-      if (inputValue.value || selectedValue.value) {
-        newValue = inputValue.value + selectedValue.value
-      } else {
-        newValue = defaultValue
-      }
-      emit('update:modelValue', newValue);
-      return newValue
-    })
+    const resValue = ref(modelValue || defaultValue)
 
     const tldSelect = ref(() => (
       <t-select
@@ -83,11 +73,13 @@ export default defineComponent({
     ));
     
     function handleInputChange(value) {
-      inputValue.value = value
+      resValue.value = value
+      emit('update:modelValue', resValue.value);
     }
 
     function handleSelectChange(value) {
-      selectedValue.value += value
+      resValue.value = resValue.value + value
+      emit('update:modelValue', resValue.value);
     }
 
     return {

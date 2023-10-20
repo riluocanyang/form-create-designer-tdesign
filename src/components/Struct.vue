@@ -114,7 +114,6 @@ export default defineComponent({
         this.err = ` (${e})`;
         return;
       }
-      console.log(this.validate);
       if (this.validate && false === this.validate(val)) {
         this.err = true;
         return;
