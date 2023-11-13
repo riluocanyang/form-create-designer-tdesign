@@ -21,8 +21,8 @@ import span from './span';
 import divider from './divider';
 import row from './row';
 import col from './col';
-import tab from './tab';
-import tabPanel from './tabPanel';
+// import tab from './tab';
+// import tabPanel from './tabPanel';
 import space from './space';
 
 const ruleList = {
@@ -49,8 +49,8 @@ const ruleList = {
   [divider.name]: divider,
   [row.name]: row,
   [col.name]: col,
-  [tab.name]: tab,
-  [tabPanel.name]: tabPanel,
+  // [tab.name]: tab,
+  // [tabPanel.name]: tabPanel,
   [space.name]: space
 };
 

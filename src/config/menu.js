@@ -20,7 +20,7 @@ import button from './rule/button';
 import span from './rule/span';
 import divider from './rule/divider';
 import row from './rule/row';
-import tab from './rule/tab';
+// import tab from './rule/tab';
 import space from './rule/space';
 
 export default function createMenu({ t }) {
@@ -44,7 +44,8 @@ export default function createMenu({ t }) {
       name: 'layout',
       title: t('menu.layout'),
       list: [
-        row, tab, space
+        // row, tab, space
+        row, space
       ]
     },
   ]

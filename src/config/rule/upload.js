@@ -17,14 +17,15 @@ export default {
       $required: false,
       props: {
         action: 'https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo',
-        // onSuccess(res, file) {
-        //   file.url = res.data.url;
-        // },
-        // onFail(e) {
-        //   console.log(e);
-        // }
+        onSuccess(res, file) {
+          file.url = res.data.url;
+        },
+        onFail(e) {
+          console.log(e);
+        }
       },
-      value: [new File(["foo"], "foo.txt")]
+      // value: [new File(["foo"], "foo.txt")],
+      // value: [{}],
     };
   },
   props(_, { t }) {
