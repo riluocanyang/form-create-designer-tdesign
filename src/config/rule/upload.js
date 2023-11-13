@@ -16,16 +16,16 @@ export default {
       info: '',
       $required: false,
       props: {
-        action: 'https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo',
-        onSuccess(res, file) {
-          file.url = res.data.url;
+        action: '/zxauto-bpm/platform/form/file/upload',
+        onSuccess: function(res, file) {
+          // file.url = res.data.url;
         },
-        onFail(e) {
+        onFail: function(e) {
           console.log(e);
         }
       },
       // value: [new File(["foo"], "foo.txt")],
-      // value: [{}],
+      value: [{}],
     };
   },
   props(_, { t }) {
