@@ -1,6 +1,6 @@
 {
     "name": "form-create-designer-tdesign",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "好用的vue可视化表单设计器组件",
     "unpkg": "./dist/index.umd.js",
     "jsdelivr": "./dist/index.umd.js",
@@ -143,6 +143,7 @@
         "@form-create/tdesign": "^3.1.23",
         "@form-create/utils": "^3.1.15",
         "codemirror": "^6.0.1",
+        "js-cookie": "^3.0.5",
         "vuedraggable": "4.1.0"
     }
 }

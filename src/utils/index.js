@@ -141,6 +141,7 @@ const _toJSON = {
 };
 
 export const deepParseFn = function (target) {
+  if (typeof target !== 'object') return target
   for (let key in target) {
     if (Object.prototype.hasOwnProperty.call(target, key)) {
       let data = target[key];

@@ -29,6 +29,7 @@ export default defineComponent({
   name: "Fetch",
   props: {
     modelValue: [Object, String],
+    defaultValue: [Object, String],
     to: String,
   },
   components: {
@@ -37,7 +38,7 @@ export default defineComponent({
   inject: ["designer"],
   computed: {
     formValue() {
-      const val = this.modelValue;
+      const val = this.modelValue || this.defaultValue;
       if (!val) return {};
       if (is.String(val)) {
         return {
@@ -62,7 +63,7 @@ export default defineComponent({
         form: {
           labelPosition: "right",
           size: "small",
-          labelWidth: "90px",
+          labelWidth: "150px",
         },
         submitBtn: false,
       },
@@ -125,22 +126,24 @@ export default defineComponent({
           title: t("fetch.parse") + ": ",
           info: t("fetch.parseInfo"),
           value: exampleParseFunction,
-          props: {
-            type: "textarea",
-            rows: 12,
-          },
+          // props: {
+          //   type: "textarea",
+          //   autosize: {
+          //     minRows: 12,
+          //   }
+          // },
           validate: [
             {
-              validator: (_, v, cb) => {
-                if (!v) return cb();
+              validator: (v) => {
+                if (!v) return true;
                 try {
                   this.parseFn(v);
+                  return true
+                  // return { result: true, message: '', type: 'success'}
                 } catch (e) {
-                  return cb(false);
+                  return { result: false, message: t("fetch.parseValidate"), type: 'error'}
                 }
-                cb();
               },
-              message: t("fetch.parseValidate"),
             },
           ],
         },

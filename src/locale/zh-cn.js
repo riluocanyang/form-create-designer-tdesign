@@ -74,6 +74,7 @@ const ZhCn = {
     main: "表单组件",
     aide: "辅助组件",
     layout: "布局组件",
+    custom: "自定义组件",
   },
   props: {
     required: "是否必填",
@@ -136,6 +137,18 @@ const ZhCn = {
         showButton: "是否有按钮",
         buttonPlacement: "加减按钮的位置",
         placeholder: "提示信息",
+      },
+    },
+    textarea: {
+      name: "文本输入框",
+      props: {
+        defaultValue: "默认值",
+        maxlength: "用户最多可以输入的字符个数",
+        placeholder: "输入框占位文本",
+        clearable: "是否可清空",
+        disabled: "禁用",
+        status: '文本框状态',
+        autosize: "高度设置",
       },
     },
     select: {
@@ -440,6 +453,18 @@ const ZhCn = {
         disabled: "是否禁用",
       },
     },
+    customUser: {
+      name: '人员选择器',
+      props: {
+        height: "高度",
+      },
+    },
+    customDept: {
+      name: '机构选择器',
+      props: {
+        height: "高度",
+      },
+    }
   },
   aboutTime: {
     date: "日期",

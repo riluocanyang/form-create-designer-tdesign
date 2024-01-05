@@ -43,7 +43,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Struct",
   props: {
-    modelValue: [Object, Array, Function],
+    modelValue: [Object, Array, Function, String],
     title: String,
     defaultValue: {
       require: false,

@@ -61,6 +61,7 @@ export default {
         type: 'switch',
         field: 'multiple',
         title: '是否支持多选',
+        value: false,
         props: {
           size: 'small'
         }
@@ -92,9 +93,21 @@ export default {
         title: '自定义单个级联选项'
       },
       {
-        type: 'input',
+        type: 'Struct',
         field: 'keys',
-        title: 'value / label / children 在 options 中对应的字段别名'
+        title: 'value / label / children 在 options 中对应的字段别名',
+        value: {
+          label: 'deptName',
+          value: 'deptId',
+          children: 'children'
+        },
+        props: { 
+          defaultValue: {
+            label: 'deptName',
+            value: 'deptId',
+            children: 'children'
+          } 
+        }
       },
       {
         type: 'switch',

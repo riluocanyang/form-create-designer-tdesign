@@ -1,5 +1,6 @@
 import input from './rule/input'
 import number from './rule/number'
+import textarea from './rule/textarea'
 import radio from './rule/radio';
 import checkbox from './rule/checkbox';
 import select from './rule/select';
@@ -22,6 +23,8 @@ import divider from './rule/divider';
 import row from './rule/row';
 // import tab from './rule/tab';
 import space from './rule/space';
+import customUser from './rule/custom/user';
+import customDept from './rule/custom/dept';
 
 export default function createMenu({ t }) {
   return [
@@ -29,7 +32,7 @@ export default function createMenu({ t }) {
       name: 'main',
       title: t('menu.main'),
       list: [
-        input, number, radio, checkbox, select, _switch, time, date, dateRange, slider, 
+        input, number, textarea, radio, checkbox, select, _switch, time, date, dateRange, slider, 
         rate, color, cascader, upload, transfter, tree, editor,
       ]
     },
@@ -46,6 +49,14 @@ export default function createMenu({ t }) {
       list: [
         // row, tab, space
         row, space
+      ]
+    },
+    {
+      name: 'custom',
+      title: t('menu.custom'),
+      list: [
+        // row, tab, space
+        customUser, customDept
       ]
     },
   ]

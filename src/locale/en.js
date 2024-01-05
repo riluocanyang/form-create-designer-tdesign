@@ -76,6 +76,7 @@ const En = {
     main: "Form",
     aide: "Auxiliary",
     layout: "Layout",
+    custom: "Custom",
   },
   props: {
     required: "Is it required",
@@ -463,6 +464,18 @@ const En = {
         disabled: "Whether to disable",
       },
     },
+    customUser: {
+      name: 'User Select',
+      props: {
+        height: "高度",
+      },
+    },
+    customDept: {
+      name: 'Dept Select',
+      props: {
+        height: "高度",
+      },
+    }
   },
   aboutTime: {
     date: "date",

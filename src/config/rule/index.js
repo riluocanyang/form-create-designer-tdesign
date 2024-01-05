@@ -1,5 +1,6 @@
 import input from './input';
 import number from './number';
+import textarea from './textarea';
 import radio from './radio';
 import checkbox from './checkbox';
 import select from './select';
@@ -24,10 +25,13 @@ import col from './col';
 // import tab from './tab';
 // import tabPanel from './tabPanel';
 import space from './space';
+import customUser from './custom/user';
+import customDept from './custom/dept';
 
 const ruleList = {
   [input.name]: input,
   [number.name]: number,
+  [textarea.name]: textarea,
   [radio.name]: radio,
   [checkbox.name]: checkbox,
   [select.name]: select,
@@ -51,7 +55,9 @@ const ruleList = {
   [col.name]: col,
   // [tab.name]: tab,
   // [tabPanel.name]: tabPanel,
-  [space.name]: space
+  [space.name]: space,
+  [customUser.name]: customUser,
+  [customDept.name]: customDept,
 };
 
 export default ruleList;

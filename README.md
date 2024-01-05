@@ -127,3 +127,54 @@ app.use(FcDesigner)
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2021-present xaboy
+
+## 一些注意事项
+```javascript
+export default {
+  name: customName, // 唯一标识
+  rule({ t }) {
+    const opt = t('props.option');
+    return {
+      // ...,
+      props: { // 在初始生效的属性
+        options: [1, 2].map(value => {
+          return {
+            label: opt + value,
+            value,
+            children: [],
+          }
+        }),
+        multiple: true,
+        checkStrictly: true,
+        keys: {
+          label: 'deptName',
+          value: 'deptId',
+          children: 'children'
+        }
+      }
+    };
+  },
+  props(_, { t }) {  // 更新属性
+    return localeProps(t, name + '.props', [
+        // ...,
+      {
+        type: 'Fetch', 
+        field: 'formCreateEffect>fetch', 
+        title: '接口数据',
+        props: {
+            to: 'props.options', // 这里取决于options位置，有的是props.options,有的是options
+            defaultValue: { // 默认值
+                action: "/authService/sys-dept/allDeptTree",
+                method: "POST",
+            }
+        },
+      },
+    ]);
+  }
+};
+```
+
+* 如果需要在初始时，就想让某个属性生效，需要找到当前组件的rule文件，在export default的rule里面设置props，详见rule/custom/dept.js 组件。
+* 接口调用的Fetch组件，数据关联（TDesign组件的options）是通过 props.to 属性控制的，取决于rule中如何配置options，有的options 放在了props里，则Fetch的props.to为props.options，有的和props同级，则Fetch的props.to为options。（比如custom的dept 和 user 中options区别）。
+* defaultValue 为 通过props传过来的值，modelValue 是当前值，需要通过$emit触发。详见 components/CustomDefaultValue.vue 组件。
+

@@ -45,7 +45,7 @@ export default {
             { label: 'search', value: 'search' },
             { label: 'submit', value: 'submit' },
             { label: 'url', value: 'url' },
-            { label: 'tel', value: 'tel' }
+            { label: 'tel', value: 'tel' },
           ]
         },
         {
